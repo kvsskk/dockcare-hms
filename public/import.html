@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Import · DockCare</title>
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="page" hidden>
+  <div class="card mb-3">
+    <div class="card-body d-flex flex-wrap align-items-center gap-3">
+      <div class="stepper" id="stepper"></div>
+      <div class="ms-auto d-flex gap-2">
+        <button class="btn btn-light border" id="templateBtn"><i class="bi bi-download me-1"></i>Download template</button>
+        <button class="btn btn-light border" id="restartBtn" hidden><i class="bi bi-arrow-counterclockwise me-1"></i>New file</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="stepUpload">
+    <div class="card">
+      <div class="card-body">
+        <label class="dropzone d-block" id="drop"><i class="bi bi-file-earmark-excel fs-1 d-block mb-2"></i>
+          <b>Click to choose an Excel file</b> or drop it here<br><span class="small">.xlsx, .xls or .csv · employee and dependent register (one row per person)</span>
+          <input type="file" id="file" accept=".xlsx,.xls,.csv" hidden></label>
+        <div class="form-check mt-3"><input class="form-check-input" type="checkbox" id="createEmp" checked><label class="form-check-label" for="createEmp">Create employees that are not yet in the employee master (first load from HR)</label></div>
+        <div class="note note-info mt-3"><i class="bi bi-info-circle"></i><div>Works with the template and with the existing hospital register layout (employee details on the first row of each family only). Nothing is saved until you press <b>Import</b>.</div></div>
+      </div>
+    </div>
+    <div class="card mt-3"><div class="card-header"><h3>Previous imports</h3></div>
+      <div class="table-responsive"><table class="table table-sm"><thead><tr><th>Date</th><th>File</th><th>By</th><th>Rows</th><th>Imported</th><th>Needs review</th><th>Errors</th></tr></thead><tbody id="history"></tbody></table></div></div>
+  </div>
+
+  <div id="stepReview" hidden>
+    <div class="row g-3 mb-3" id="kpis"></div>
+    <div id="fileNotes"></div>
+    <div class="card">
+      <ul class="nav nav-tabs px-3 pt-2" id="tabs"></ul>
+      <div class="table-responsive" style="max-height:55vh"><table class="table table-sm table-hover" id="grid"></table></div>
+      <div class="card-body border-top d-flex flex-wrap gap-2 align-items-center">
+        <span class="text-muted small">Errors are not imported. Rows with warnings are imported as <b>Needs review</b> and appear in Dependent Approvals.</span>
+        <button class="btn btn-light border ms-auto" id="errReportBtn"><i class="bi bi-download me-1"></i>Download error report</button>
+        <button class="btn btn-primary" id="importBtn"><i class="bi bi-upload me-1"></i>Import</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="stepDone" hidden></div>
+</div>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/seed.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/seed2.js"></script>
+<script src="js/core/services.js"></script>
+<script src="js/core/opd.js"></script>
+<script src="js/core/vouchers.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/layout.js"></script>
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="js/pages/import.js"></script>
+</body>
+</html>

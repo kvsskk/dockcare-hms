@@ -1,0 +1,46 @@
+<div id="page" hidden>
+  <ul class="nav nav-pills mb-3 gap-1" id="views">
+    <li class="nav-item"><a class="nav-link active" href="#" data-view="dispense"><i class="bi bi-capsule me-1"></i>Dispense</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-view="stock"><i class="bi bi-box-seam me-1"></i>Stock</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-view="receive"><i class="bi bi-truck me-1"></i>Receive stock</a></li>
+  </ul>
+  <div id="vDispense">
+    <div class="row g-3">
+      <div class="col-xl-4">
+        <div class="card">
+          <ul class="nav nav-tabs px-3 pt-2" id="tabs"></ul>
+          <div class="table-responsive qtab"><table class="table table-hover"><tbody id="list"></tbody></table></div>
+        </div>
+      </div>
+      <div class="col-xl-8"><div class="card" id="detail"><div class="empty"><i class="bi bi-hand-index"></i>Select a prescription</div></div></div>
+    </div>
+  </div>
+  <div id="vStock" hidden>
+    <div class="row g-3 mb-3" id="stockKpis"></div>
+    <div class="card">
+      <div class="card-body border-bottom d-flex gap-2 flex-wrap"><input class="form-control" style="max-width:300px" id="stockQ" placeholder="Search medicine"><select class="form-select" style="max-width:200px" id="stockF"><option value="">All</option><option value="low">Below reorder level</option><option value="exp">Near expiry</option><option value="out">Out of stock</option></select></div>
+      <div class="table-responsive"><table class="table table-hover"><thead><tr><th>Code</th><th>Medicine</th><th class="text-end">In stock</th><th class="text-end">Reorder at</th><th>Earliest expiry</th><th class="text-end">Rate</th><th>Status</th></tr></thead><tbody id="stockBody"></tbody></table></div>
+      <div class="card-body border-top" id="expired"></div>
+    </div>
+  </div>
+  <div id="vReceive" hidden>
+    <div class="row g-3">
+      <div class="col-xl-5">
+        <form class="card" id="recForm" novalidate>
+          <div class="card-header"><h3>Goods receipt</h3><span class="sub">Add a new batch to stock</span></div>
+          <div class="card-body row g-3">
+            <div class="col-12"><label class="form-label req" for="rDrug">Medicine</label><select class="form-select" id="rDrug" required></select></div>
+            <div class="col-md-6"><label class="form-label req" for="rBatch">Batch no.</label><input class="form-control mono text-uppercase" id="rBatch" required maxlength="20"></div>
+            <div class="col-md-6"><label class="form-label req" for="rExpiry">Expiry date</label><input class="form-control" type="date" id="rExpiry" required></div>
+            <div class="col-md-6"><label class="form-label req" for="rQty">Quantity</label><input class="form-control" type="number" min="1" step="1" id="rQty" required></div>
+            <div class="col-md-6"><label class="form-label" for="rCost">Unit cost (₹)</label><input class="form-control" type="number" min="0" step="0.01" id="rCost"></div>
+            <div class="col-md-6"><label class="form-label" for="rSupplier">Supplier</label><input class="form-control" id="rSupplier" maxlength="60"></div>
+            <div class="col-md-6"><label class="form-label" for="rInvoice">Invoice no.</label><input class="form-control" id="rInvoice" maxlength="30"></div>
+          </div>
+          <div class="card-body border-top text-end"><button class="btn btn-primary" type="submit"><i class="bi bi-plus-lg me-1"></i>Add to stock</button></div>
+        </form>
+      </div>
+      <div class="col-xl-7"><div class="card"><div class="card-header"><h3>Recent receipts</h3></div><div class="table-responsive"><table class="table table-sm"><thead><tr><th>Date</th><th>Medicine</th><th>Batch</th><th>Expiry</th><th class="text-end">Qty</th></tr></thead><tbody id="recList"></tbody></table></div></div></div>
+    </div>
+  </div>
+</div>

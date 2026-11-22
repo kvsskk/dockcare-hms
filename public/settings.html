@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings · DockCare</title>
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="page" hidden>
+  <form id="setForm" class="row g-3" novalidate>
+    <div class="col-xl-7">
+      <div class="card mb-3">
+        <div class="card-header"><h3>Dependent eligibility</h3><span class="sub">Used by the automatic checks and the import</span></div>
+        <div class="card-body row g-3">
+          <div class="col-12"><label class="form-label">Eligible relations</label><div id="relations" class="d-flex flex-wrap gap-3"></div></div>
+          <div class="col-md-6"><label class="form-label" for="childAgeLimit">Children eligible below age</label><div class="input-group"><input class="form-control" type="number" min="1" max="60" id="childAgeLimit" required><span class="input-group-text">years</span></div></div>
+          <div class="col-md-6"><label class="form-label" for="parentIncomeLimit">Parents' monthly income limit</label><div class="input-group"><span class="input-group-text">₹</span><input class="form-control" type="number" min="0" step="100" id="parentIncomeLimit" required></div></div>
+          <div class="col-md-6"><div class="form-check form-switch mt-2"><input class="form-check-input" type="checkbox" id="requireAadhaar"><label class="form-check-label" for="requireAadhaar">Flag missing Aadhaar</label></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Approval and card</h3></div>
+        <div class="card-body row g-3">
+          <div class="col-md-6"><label class="form-label" for="approverRole">Dependents are approved by</label><select class="form-select" id="approverRole"><option value="admin">Hospital Admin</option><option value="hr">HR</option></select></div>
+          <div class="col-md-6"><label class="form-label" for="cardValidityYears">Card valid for</label><div class="input-group"><input class="form-control" type="number" min="1" max="10" id="cardValidityYears" required><span class="input-group-text">years (to 31 March)</span></div></div>
+          <div class="col-md-6"><label class="form-label" for="hospitalName">Hospital name on card</label><input class="form-control" id="hospitalName" maxlength="40" required></div>
+          <div class="col-md-6"><label class="form-label" for="city">City</label><input class="form-control" id="city" maxlength="30" required></div>
+          <div class="col-md-6"><label class="form-label" for="sessionMinutes">Auto logout after</label><div class="input-group"><input class="form-control" type="number" min="5" max="120" id="sessionMinutes" required><span class="input-group-text">minutes idle</span></div></div>
+        </div>
+        <div class="card-body border-top text-end"><button class="btn btn-primary" type="submit"><i class="bi bi-check2 me-1"></i>Save settings</button></div>
+      </div>
+    </div>
+    <div class="col-xl-5">
+      <div class="card">
+        <div class="card-header"><h3>Demo data</h3></div>
+        <div class="card-body">
+          <p class="text-muted mb-2">This browser holds the demo database (<b id="size"></b> KB). It is replaced by the Supabase database when the server is connected.</p>
+          <button type="button" class="btn btn-outline-danger" id="resetBtn"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset demo data</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/seed.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/seed2.js"></script>
+<script src="js/core/services.js"></script>
+<script src="js/core/opd.js"></script>
+<script src="js/core/vouchers.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/layout.js"></script>
+<script src="js/pages/settings.js"></script>
+</body>
+</html>

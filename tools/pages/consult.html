@@ -1,0 +1,16 @@
+<div id="page" hidden>
+  <div id="queueView">
+    <div class="row g-3">
+      <div class="col-xl-8">
+        <div class="card">
+          <div class="card-header"><h3>My queue – today</h3><span class="sub" id="docName"></span><select class="form-select form-select-sm ms-auto" style="max-width:240px" id="docPick" hidden aria-label="Doctor"></select></div>
+          <div class="table-responsive"><table class="table table-hover"><thead><tr><th>Token</th><th>Patient</th><th>Complaint</th><th>Vitals</th><th>Status</th><th></th></tr></thead><tbody id="queue"></tbody></table></div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="card"><div class="card-header"><h3>Seen today</h3></div><div class="table-responsive"><table class="table table-sm"><tbody id="seen"></tbody></table></div></div>
+      </div>
+    </div>
+  </div>
+  <div id="consultView" hidden></div>
+</div>

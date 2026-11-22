@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient Queue & Vitals · DockCare</title>
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="page" hidden>
+  <div class="row g-3">
+    <div class="col-xl-5">
+      <div class="card">
+        <ul class="nav nav-tabs px-3 pt-2" id="tabs"></ul>
+        <div class="table-responsive qtab"><table class="table table-hover"><thead><tr><th>Token</th><th>Patient</th><th>Doctor</th><th>Status</th></tr></thead><tbody id="queue"></tbody></table></div>
+      </div>
+    </div>
+    <div class="col-xl-7"><div id="detail"><div class="card"><div class="empty"><i class="bi bi-hand-index"></i>Select a patient from the queue</div></div></div></div>
+  </div>
+</div>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/seed.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/seed2.js"></script>
+<script src="js/core/services.js"></script>
+<script src="js/core/opd.js"></script>
+<script src="js/core/vouchers.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/layout.js"></script>
+<script src="js/pages/vitals.js"></script>
+</body>
+</html>

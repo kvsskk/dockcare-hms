@@ -1,0 +1,82 @@
+<div id="page" hidden>
+  <div id="returnedNote"></div>
+  <form id="depForm" novalidate>
+    <div class="row g-3">
+      <div class="col-xl-8">
+        <div class="card mb-3">
+          <div class="card-header"><h3>Linked employee</h3></div>
+          <div class="card-body">
+            <div class="row g-3 align-items-start">
+              <div class="col-md-3">
+                <label class="form-label req" for="empCode">Employee code</label>
+                <div class="input-group"><input class="form-control mono text-uppercase" id="empCode" required placeholder="e.g. F612">
+                  <button class="btn btn-light border" type="button" id="findEmp" title="Look up"><i class="bi bi-search"></i></button></div>
+              </div>
+              <div class="col-md-9"><div id="empInfo" class="text-muted">Enter the employee code and press Enter.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header"><h3>Dependent details</h3><span class="sub">Same fields as the medical book</span></div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-auto">
+                <div class="photo-box" id="photoBox"><div><i class="bi bi-camera fs-3 d-block"></i>No photo</div></div>
+                <div class="d-flex gap-1 mt-2" style="width:150px">
+                  <button type="button" class="btn btn-sm btn-light border flex-fill" id="camBtn"><i class="bi bi-webcam"></i> Camera</button>
+                  <label class="btn btn-sm btn-light border flex-fill mb-0" title="Upload photo"><i class="bi bi-upload"></i><input type="file" accept="image/*" id="photoFile" hidden></label>
+                </div>
+                <button type="button" class="btn btn-sm btn-primary mt-1 w-100" id="snapBtn" hidden><i class="bi bi-camera"></i> Capture</button>
+              </div>
+              <div class="col">
+                <div class="row g-3">
+                  <div class="col-md-8"><label class="form-label req" for="name">Full name</label><input class="form-control" id="name" required maxlength="80"></div>
+                  <div class="col-md-4"><label class="form-label req" for="relation">Relation</label><select class="form-select" id="relation" required></select></div>
+                  <div class="col-md-4"><label class="form-label req" for="dob">Date of birth</label><input class="form-control" type="date" id="dob" required></div>
+                  <div class="col-md-4"><label class="form-label req" for="gender">Gender</label><select class="form-select" id="gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+                  <div class="col-md-4"><label class="form-label" for="bloodGroup">Blood group</label><select class="form-select" id="bloodGroup"><option value="">Not known</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+                  <div class="col-md-4"><label class="form-label" for="aadhaar">Aadhaar number</label><input class="form-control mono" id="aadhaar" inputmode="numeric" maxlength="14" placeholder="12 digits"></div>
+                  <div class="col-md-4"><label class="form-label" for="mobile">Mobile</label><input class="form-control" id="mobile" inputmode="tel" maxlength="10"></div>
+                  <div class="col-md-4" id="incomeWrap"><label class="form-label" for="income">Monthly income (₹)</label><input class="form-control" type="number" min="0" step="100" id="income"></div>
+                  <div class="col-md-6"><label class="form-label" for="idMarks">Identification marks</label><input class="form-control" id="idMarks" maxlength="80" placeholder="e.g. Mole on left cheek"></div>
+                  <div class="col-md-6"><label class="form-label" for="oldBookNo">Old medical book no. (if any)</label><input class="form-control mono" id="oldBookNo" maxlength="10"></div>
+                  <div class="col-12"><label class="form-label" for="address">Address</label>
+                    <div class="input-group"><input class="form-control" id="address" maxlength="200"><button class="btn btn-light border" type="button" id="sameAddr">Same as employee</button></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header"><h3>Signature / thumb impression</h3><span class="sub">Employee signs or gives LTI on the pad</span><button type="button" class="btn btn-sm btn-light border ms-auto" id="sigClear">Clear</button></div>
+          <div class="card-body"><canvas class="sig-pad" id="sigPad"></canvas></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h3>Supporting documents</h3><span class="sub">PDF / JPG, max 2 MB each</span></div>
+          <div class="card-body">
+            <label class="dropzone d-block mb-2" id="docDrop"><i class="bi bi-cloud-arrow-up fs-3 d-block"></i>Click or drop Aadhaar, birth / marriage certificate, income proof
+              <input type="file" id="docFile" multiple accept=".pdf,image/*" hidden></label>
+            <div id="docList"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4">
+        <div class="card mb-3 position-sticky" style="top:80px">
+          <div class="card-header"><h3>Automatic eligibility check</h3></div>
+          <div class="card-body" id="checks"><div class="text-muted">Checks appear as you fill in the form.</div></div>
+          <div class="card-body border-top">
+            <div class="note note-warn mb-3"><i class="bi bi-clock"></i><div>Until approved, only emergency visits are allowed for this dependent.</div></div>
+            <div class="d-flex gap-2">
+              <a class="btn btn-light border flex-fill" id="cancelBtn" href="patients.html">Cancel</a>
+              <button class="btn btn-primary flex-fill" type="submit" id="submitBtn"><i class="bi bi-send me-1"></i>Submit for approval</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

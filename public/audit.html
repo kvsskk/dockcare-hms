@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Log · DockCare</title>
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="page" hidden>
+  <div class="card">
+    <div class="card-body d-flex flex-wrap gap-2 border-bottom">
+      <input class="form-control" style="max-width:300px" id="q" placeholder="Search action, details or record">
+      <select class="form-select" style="max-width:220px" id="user"><option value="">All users</option></select>
+      <input class="form-control" type="date" style="max-width:170px" id="from" aria-label="From date">
+      <button class="btn btn-light border ms-auto" id="exportBtn"><i class="bi bi-download me-1"></i>Export CSV</button>
+    </div>
+    <div class="table-responsive"><table class="table table-hover table-sm"><thead><tr><th>Time</th><th>User</th><th>Role</th><th>Action</th><th>Record</th><th>Details</th></tr></thead><tbody id="list"></tbody></table></div>
+    <div class="card-body border-top text-muted small" id="count"></div>
+  </div>
+</div>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/seed.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/seed2.js"></script>
+<script src="js/core/services.js"></script>
+<script src="js/core/opd.js"></script>
+<script src="js/core/vouchers.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/layout.js"></script>
+<script src="js/pages/audit.js"></script>
+</body>
+</html>

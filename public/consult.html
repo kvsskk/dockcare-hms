@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultation · DockCare</title>
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="page" hidden>
+  <div id="queueView">
+    <div class="row g-3">
+      <div class="col-xl-8">
+        <div class="card">
+          <div class="card-header"><h3>My queue – today</h3><span class="sub" id="docName"></span><select class="form-select form-select-sm ms-auto" style="max-width:240px" id="docPick" hidden aria-label="Doctor"></select></div>
+          <div class="table-responsive"><table class="table table-hover"><thead><tr><th>Token</th><th>Patient</th><th>Complaint</th><th>Vitals</th><th>Status</th><th></th></tr></thead><tbody id="queue"></tbody></table></div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="card"><div class="card-header"><h3>Seen today</h3></div><div class="table-responsive"><table class="table table-sm"><tbody id="seen"></tbody></table></div></div>
+      </div>
+    </div>
+  </div>
+  <div id="consultView" hidden></div>
+</div>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/seed.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/seed2.js"></script>
+<script src="js/core/services.js"></script>
+<script src="js/core/opd.js"></script>
+<script src="js/core/vouchers.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/layout.js"></script>
+<script src="js/pages/consult.js"></script>
+</body>
+</html>

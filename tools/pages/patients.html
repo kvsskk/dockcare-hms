@@ -1,0 +1,35 @@
+<div id="page" hidden>
+  <div class="card mb-3">
+    <div class="card-body">
+      <form id="searchForm" class="d-flex gap-2" role="search">
+        <div class="input-group">
+          <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+          <input class="form-control form-control-lg" id="q" placeholder="Employee code, name, Regn. No., old book no. or mobile" autocomplete="off" autofocus>
+        </div>
+        <button class="btn btn-primary px-4" type="submit">Search</button>
+      </form>
+      <div class="form-text">Tip: a USB QR scanner types the card's QR code straight into this box.</div>
+    </div>
+  </div>
+  <div id="results"></div>
+  <div class="row g-3" id="familyWrap" hidden>
+    <div class="col-xl-8">
+      <div class="card">
+        <div class="card-body d-flex flex-wrap gap-3 align-items-center border-bottom" id="empHead"></div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead><tr><th>Beneficiary</th><th>Relation</th><th>Age / Sex</th><th>Blood</th><th>Regn. No.</th><th>Status</th><th class="text-end">Actions</th></tr></thead>
+            <tbody id="members"></tbody>
+          </table>
+        </div>
+        <div class="card-body d-flex justify-content-between align-items-center border-top">
+          <span class="text-muted">Dependent missing from the list?</span>
+          <a class="btn btn-light border" id="addDepBtn"><i class="bi bi-person-plus me-1"></i>Add dependent</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card" id="detail"></div>
+    </div>
+  </div>
+</div>

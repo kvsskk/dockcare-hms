@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Users & Roles · DockCare</title>
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="page" hidden>
+  <div class="row g-3">
+    <div class="col-xl-8">
+      <div class="card">
+        <div class="card-header"><h3>Users</h3><span class="sub">Each person has their own login</span></div>
+        <div class="table-responsive"><table class="table table-hover"><thead><tr><th>User ID</th><th>Name</th><th>Role</th><th>Status</th><th class="text-end">Actions</th></tr></thead><tbody id="list"></tbody></table></div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-header"><h3>Add user</h3></div>
+        <form class="card-body d-grid gap-3" id="addForm" novalidate>
+          <div><label class="form-label req" for="username">User ID</label><input class="form-control" id="username" pattern="[a-z0-9._]{3,20}" required><div class="form-text">3–20 lower-case letters, numbers, dot or underscore</div></div>
+          <div><label class="form-label req" for="name">Full name</label><input class="form-control" id="name" required maxlength="60"></div>
+          <div><label class="form-label req" for="role">Role</label><select class="form-select" id="role" required></select></div>
+          <div><label class="form-label req" for="password">Temporary password</label><input class="form-control" id="password" minlength="8" required><div class="form-text">At least 8 characters</div></div>
+          <button class="btn btn-primary" type="submit"><i class="bi bi-person-plus me-1"></i>Add user</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/seed.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/seed2.js"></script>
+<script src="js/core/services.js"></script>
+<script src="js/core/opd.js"></script>
+<script src="js/core/vouchers.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/layout.js"></script>
+<script src="js/pages/users.js"></script>
+</body>
+</html>

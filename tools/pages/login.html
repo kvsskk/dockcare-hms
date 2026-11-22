@@ -1,0 +1,44 @@
+<div class="login-wrap">
+  <div class="login-left">
+    <div class="d-flex align-items-center gap-3">
+      <div class="logo" style="width:46px;height:46px;font-size:24px"><i class="bi bi-life-preserver"></i></div>
+      <div><b style="font-size:19px">DockCare</b><div style="font-size:12.5px;color:#A9BDD3">Hospital Management System</div></div>
+    </div>
+    <h2>One record for every employee and every dependent.</h2>
+    <p>Registration, consultation, laboratory, pharmacy and payroll recovery — connected in one secure system for the hospital.</p>
+    <div class="mt-4 d-grid gap-3" style="font-size:14px;color:#DCE6F1">
+      <div><i class="bi bi-person-vcard me-2 text-info"></i>Medical record cum identity card for every beneficiary</div>
+      <div><i class="bi bi-patch-check me-2 text-info"></i>Verified dependents with approval</div>
+      <div><i class="bi bi-currency-rupee me-2 text-info"></i>Monthly payroll deduction file</div>
+    </div>
+    <div class="mt-auto" style="font-size:12px;color:#7F96B0">Authorised users only · All activity is logged</div>
+  </div>
+  <div class="login-right">
+    <div class="login-card">
+      <h2 class="h4 fw-bold mb-1">Sign in</h2>
+      <p class="text-muted mb-3">Select your role and enter your credentials</p>
+      <div id="msg"></div>
+      <form id="loginForm" novalidate>
+        <div class="role-grid mb-3" id="roles"></div>
+        <div class="mb-3">
+          <label class="form-label" for="username">User ID</label>
+          <div class="input-group"><span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+            <input class="form-control" id="username" autocomplete="username" required></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-group"><span class="input-group-text bg-white"><i class="bi bi-lock"></i></span>
+            <input class="form-control" id="password" type="password" autocomplete="current-password" required>
+            <button class="btn btn-light border" type="button" id="showPw" aria-label="Show password"><i class="bi bi-eye"></i></button></div>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit"><i class="bi bi-shield-lock me-1"></i>Sign in securely</button>
+      </form>
+      <div class="text-center text-muted mt-3" style="font-size:12px">Forgot password? Contact Hospital Administration</div>
+      <details class="mt-3 small">
+        <summary class="text-muted">Demo accounts</summary>
+        <div class="mt-2 text-muted">Password for all: <code>Demo@123</code></div>
+        <table class="table table-sm mt-1 small" id="demoUsers"></table>
+      </details>
+    </div>
+  </div>
+</div>
