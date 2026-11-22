@@ -1,0 +1,14 @@
+{
+  "name": "dockcare-hms",
+  "version": "0.2.1",
+  "private": true,
+  "description": "Hospital Management System – employee and dependent healthcare",
+  "scripts": {
+    "start": "node server/server.js",
+    "pages": "python3 tools/make_pages.py"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": { "node": ">=20" }
+}
